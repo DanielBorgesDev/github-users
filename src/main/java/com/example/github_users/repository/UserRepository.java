@@ -1,9 +1,8 @@
-package com.example.github.repository;
+package com.example.github_users.repository;
 
-import com.example.github.domain.User;
+import com.example.github_users.domain.User;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
-
 import java.util.*;
 
 public interface UserRepository extends JpaRepository<User, Long> {

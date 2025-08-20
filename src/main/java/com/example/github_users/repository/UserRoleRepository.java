@@ -1,6 +1,6 @@
-package com.example.github.repository;
+package com.example.github_users.repository;
 
-import com.example.github.domain.UserRole;
+import com.example.github_users.domain.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

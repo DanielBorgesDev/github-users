@@ -1,9 +1,9 @@
-package com.example.github.controller;
+package com.example.github_users.controller;
 
-import com.example.github.domain.User;
-import com.example.github.dto.RoleResponse;
-import com.example.github.dto.UserResponse;
-import com.example.github.service.UserService;
+import com.example.github_users.domain.User;
+import com.example.github_users.dto.RoleResponse;
+import com.example.github_users.dto.UserResponse;
+import com.example.github_users.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

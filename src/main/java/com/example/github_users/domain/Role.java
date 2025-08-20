@@ -1,4 +1,4 @@
-package com.example.github.domain;
+package com.example.github_users.domain;
 
 import jakarta.persistence.*;
 import java.util.*;

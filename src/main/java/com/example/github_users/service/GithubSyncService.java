@@ -1,7 +1,7 @@
-package com.example.github.service;
+package com.example.github_users.service;
 
-import com.example.github.domain.User;
-import com.example.github.repository.UserRepository;
+import com.example.github_users.domain.User;
+import com.example.github_users.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -30,7 +30,7 @@ public class GithubSyncService implements CommandLineRunner {
         if (!userRepository.existsByLogin(dto.login())) {
           User u = new User();
           u.setLogin(dto.login());
-          u.setUrl(dto.url());
+          u.setUrl(dto.url()); 
           userRepository.save(u);
         }
       }

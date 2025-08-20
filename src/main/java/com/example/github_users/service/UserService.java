@@ -1,7 +1,11 @@
-package com.example.github.service;
+package com.example.github_users.service;
 
-import com.example.github.domain.*;
-import com.example.github.repository.*;
+import com.example.github_users.domain.Role;
+import com.example.github_users.domain.User;
+import com.example.github_users.domain.UserRole;
+import com.example.github_users.repository.RoleRepository;
+import com.example.github_users.repository.UserRepository;
+import com.example.github_users.repository.UserRoleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,12 +31,11 @@ public class UserService {
 
   @Transactional
   public Role createRole(String name) {
-    if (roleRepo.existsByName(name)) {
-      return roleRepo.findByName(name).orElseThrow();
-    }
-    Role r = new Role();
-    r.setName(name);
-    return roleRepo.save(r);
+    return roleRepo.findByName(name).orElseGet(() -> {
+      Role r = new Role();
+      r.setName(name);
+      return roleRepo.save(r);
+    });
   }
 
   @Transactional
@@ -42,8 +45,7 @@ public class UserService {
     var role = roleRepo.findById(roleId)
         .orElseThrow(() -> new IllegalArgumentException("Role not found: " + roleId));
 
-    boolean exists = userRoleRepo.existsByUserIdAndRoleId(userId, roleId);
-    if (!exists) {
+    if (!userRoleRepo.existsByUserIdAndRoleId(userId, roleId)) {
       UserRole ur = new UserRole();
       ur.setUser(user);
       ur.setRole(role);

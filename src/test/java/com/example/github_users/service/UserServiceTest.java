@@ -1,14 +1,15 @@
-package com.example.github.service;
+package com.example.github_users.service;
 
-import com.example.github.domain.Role;
-import com.example.github.domain.User;
-import com.example.github.repository.RoleRepository;
-import com.example.github.repository.UserRepository;
-import com.example.github.repository.UserRoleRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.example.github_users.domain.Role;
+import com.example.github_users.domain.User;
+import com.example.github_users.repository.RoleRepository;
+import com.example.github_users.repository.UserRepository;
+import com.example.github_users.repository.UserRoleRepository;
 
 import java.util.Optional;
 

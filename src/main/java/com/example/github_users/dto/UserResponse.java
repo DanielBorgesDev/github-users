@@ -1,4 +1,4 @@
-package com.example.github.dto;
+package com.example.github_users.dto;
 
 import java.util.List;
 
